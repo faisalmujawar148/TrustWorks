@@ -1,54 +1,57 @@
 ---
 title: Pricing
-description: "meta description"
+description: "Discover our competitive pricing plans designed for freelancers and clients alike. Choose the best plan that suits your needs and take advantage of our low commission rates and premium features."
 draft: false
 plans:
 - title: Basic Plan
-  subtitle: Best For Small Individuals
-  price: 49
+  subtitle: Ideal for Freelancers Starting Out
+  price: Free
   type: month
   features:
-    - Express Service
-    - Customs Clearance
-    - Time-Critical Services
+    - Free!
+    - Access to Basic Job Listings
+    - 5 Bids per Month
+    - Secure Payment Processing
+    - Basic Customer Support
   button:
     label: Get started for free
-    link: "/contact"
+    link: "/signup"
 
 - title: Professional Plan
-  subtitle: Best For Professionals
-  price: 69
+  subtitle: Perfect for Growing Freelancers
+  price: 39
   type: month
   recommended: true
   features:
-    - Express Service
-    - Customs Clearance
-    - Time-Critical Services
-    - Cloud Service
-    - Best Dashboard
+    - Access to All Job Listings
+    - 50 Bids per Month
+    - Secure Payment Processing
+    - Priority Customer Support
+    - Featured Profile Badge
   button:
     label: Get started
-    link: "/contact"
+    link: "/signup"
 
 - title: Business Plan
-  subtitle: Best For Large Individuals
-  price: 99
+  subtitle: Best for Agencies and High-Volume Freelancers
+  price: 79
   type: month
   features:
-    - Express Service
-    - Customs Clearance
-    - Time-Critical Services
+    - Unlimited Job Listings Access
+    - Secure Payment Processing
+    - 24/7 Premium Support
+    - Featured Profile Badge
+    - Advanced Analytics Dashboard
   button:
     label: Get started
-    link: "/contact"
+    link: "/signup"
 
 call_to_action:
-  title: Need a larger plan?
-  content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur.
+  title: Need a custom plan for your team?
+  content: Our enterprise solutions are designed for teams and agencies looking to maximize their freelancing potential. Contact us to discuss custom plans tailored to your specific needs.
   image: '/images/cta.png'
   button:
     enable: true
     label: "Contact Us"
     link: "/contact"
-    
 ---
