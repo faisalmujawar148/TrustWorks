@@ -1,14 +1,14 @@
 {
   "site": {
-    "title": "Bigspring Light Astro",
-    "base_url": "https://bigspring-light-astro.vercel.app",
+    "title": "myTrustWorks",
+    "base_url": "https://my-trust-works.vercel.app",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
     "logo": "/images/logo.png",
     "logo_width": "200",
     "logo_height": "38",
-    "logo_text": "Astroplate"
+    "logo_text": "myTrustWorks"
   },
 
   "settings": {
@@ -26,13 +26,13 @@
   "params": {
     "contact_form_action": "",
     "tag_manager_id": "",
-    "footer_content": "Lorem ipsum dolor sit amet, consectetur elit. Consjat tristique eget amet, tempus eu at cttur.",
-    "copyright": "Designed and Developed By [Themefisher](https://themefisher.com/)"
+    "footer_content": "At myTrustWorks, we connect freelancers with clients seeking high-quality services. Trust us to help you find the right talent for your project.",
+    "copyright": "© 2024 myTrustWorks. All rights reserved."
   },
 
   "metadata": {
-    "meta_author": "Themefisher",
-    "meta_image": "/images/og-image.png",
-    "meta_description": "astro boilerplate"
+    "meta_author": "myTrustWorks Team",
+    "meta_image": "/images/logo.png",
+    "meta_description": "myTrustWorks is your trusted partner for finding top freelancers and high-quality services. Join us and discover a better way to work."
   }
 }
