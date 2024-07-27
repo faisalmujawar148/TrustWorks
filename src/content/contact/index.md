@@ -2,11 +2,9 @@
 title: "Contact Us"
 draft: false
 info: 
-  title: Why you should contact us!
-  description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit recusandae voluptates doloremque veniam temporibus porro culpa ipsa, nisi soluta minima saepe laboriosam debitis nesciunt.
+  title: Why You Should Contact Us!
+  description: At myTrustWorks, we're here to help you connect with top freelancers and ensure your projects succeed. Whether you have questions, need support, or want to learn more about our platform, we're ready to assist you.
   contacts: 
-    - "phone: +88 125 256 452"
-    - "Mail: [info@bigspring.com](mailto:info@bigspring.com)"
-    - "Address: 360 Main rd, Rio, Brazil"
+    - "Email: [mytrustworks@gmail.com](mailto:mytrustworks@gmail.com)"
+    - "Address: UK & Pakistan"
 ---
-
