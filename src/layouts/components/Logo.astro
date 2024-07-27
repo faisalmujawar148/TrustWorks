@@ -17,18 +17,19 @@ const {
 } = config.site;
 ---
 
-<a href="/" class="navbar-brand block md:w-[150px] lg:w-auto">
+<a href="/" class="navbar-brand block">
   {
     src || logo ? (
       <Image
-        width={logo_width.replace("px", "") * 10000}
-        height={logo_height.replace("px", "") * 10}
+        width={logo_width.replace("px", "") * 2}
+        height={logo_height.replace("px", "") * 2}
         src={src ? src : logo}
         alt={title}
         style={{
-          height: "150px",
-          width: "300px",
+          maxWidth: "100%",
+          height: "auto",
         }}
+        class="logo-image"
       />
     ) : logo_text ? (
       logo_text
@@ -37,3 +38,16 @@ const {
     )
   }
 </a>
+
+<style>
+  .navbar-brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .logo-image {
+    max-width: 60%;
+    height: auto;
+  }
+</style>

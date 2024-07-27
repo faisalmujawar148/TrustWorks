@@ -15,43 +15,73 @@ const { title, description, info } = entry?.data;
       <h1 class="text-center font-normal" set:html={markdownify(title)} />
       <div class="section row pb-0">
         <div class="col-12 md:col-6 lg:col-7">
-          <form class="contact-form" method="POST" action={contact_form_action}>
+          <form
+            action="https://api.web3forms.com/submit"
+            method="POST"
+            id="form"
+            class="needs-validation contact-form"
+            data-astro-reload
+            novalidate>
+            
+            <input type="hidden" name="access_key" value="56cab924-bbbd-43c4-a0d9-1f2d5b8ab07f" />
+            <input type="checkbox" class="hidden" style="display:none" name="botcheck" />
+
             <div class="mb-3">
               <input
-                class="form-input w-full rounded"
+                class="form-input w-full rounded px-4 py-3 border placeholder:text-slate-400 rounded-md outline-none focus:ring-4 border-slate-300 focus:border-slate-600 ring-slate-100"
                 name="name"
                 type="text"
                 placeholder="Name"
                 required
               />
+              <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
+                Please provide your full name.
+              </div>
             </div>
+
             <div class="mb-3">
               <input
-                class="form-input w-full rounded"
+                class="form-input w-full rounded px-4 py-3 border placeholder:text-slate-400 rounded-md outline-none focus:ring-4 border-slate-300 focus:border-slate-600 ring-slate-100"
                 name="email"
                 type="email"
                 placeholder="Your email"
                 required
               />
+              <div class="empty-feedback text-red-400 text-sm mt-1">
+                Please provide your email address.
+              </div>
+              <div class="invalid-feedback text-red-400 text-sm mt-1">
+                Please provide a valid email address.
+              </div>
             </div>
+
             <div class="mb-3">
               <input
-                class="form-input w-full rounded"
+                class="form-input w-full rounded px-4 py-3 border placeholder:text-slate-400 rounded-md outline-none focus:ring-4 border-slate-300 focus:border-slate-600 ring-slate-100"
                 name="subject"
                 type="text"
                 placeholder="Subject"
                 required
               />
             </div>
+
             <div class="mb-3">
               <textarea
-                class="form-textarea w-full rounded-md"
+                class="form-textarea w-full rounded-md px-4 py-3 border placeholder:text-slate-400 rounded-md outline-none h-36 focus:ring-4 border-slate-300 focus:border-slate-600 ring-slate-100"
                 rows="7"
-                placeholder="Your message"></textarea>
+                name="message"
+                placeholder="Your message"
+                required></textarea>
+              <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
+                Please enter your message.
+              </div>
             </div>
-            <button type="submit" class="btn btn-primary"> Send Now</button>
+
+            <button type="submit" class="btn btn-primary w-full px-4 py-3 bg-blue-600 text-white rounded-md"> Send Now</button>
+            <div id="result" class="mt-3 text-center"></div>
           </form>
         </div>
+
         <div class="content col-12 md:col-6 lg:col-5">
           <h4 set:html={markdownify(info?.title)} />
           <p class="mt-4" set:html={markdownify(info?.description)} />
@@ -68,4 +98,76 @@ const { title, description, info } = entry?.data;
       </div>
     </div>
   </section>
+
+  <style>
+    .invalid-feedback,
+    .empty-feedback {
+      display: none;
+    }
+
+    .was-validated :placeholder-shown:invalid ~ .empty-feedback {
+      display: block;
+    }
+
+    .was-validated :not(:placeholder-shown):invalid ~ .invalid-feedback {
+      display: block;
+    }
+
+    .is-invalid,
+    .was-validated :invalid {
+      border-color: #dc3545;
+    }
+  </style>
+
+  <script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("form");
+      const result = document.getElementById("result");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        form.classList.add("was-validated");
+        if (!form.checkValidity()) {
+          form.querySelectorAll(":invalid")[0].focus();
+          return;
+        }
+        const formData = new FormData(form);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+
+        result.innerHTML = "Sending...";
+
+        fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: json,
+        })
+          .then(async (response) => {
+            let json = await response.json();
+            if (response.status == 200) {
+              result.classList.add("text-green-500");
+              result.innerHTML = json.message;
+            } else {
+              console.log(response);
+              result.classList.add("text-red-500");
+              result.innerHTML = json.message;
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+            result.innerHTML = "Something went wrong!";
+          })
+          .then(function () {
+            form.reset();
+            form.classList.remove("was-validated");
+            setTimeout(() => {
+              result.style.display = "none";
+            }, 5000);
+          });
+      });
+    }, { once: true });
+  </script>
 </Base>
