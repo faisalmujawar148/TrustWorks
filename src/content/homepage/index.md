@@ -82,22 +82,7 @@ workflow:
   image: "/images/banner.png"
   description: "Join us and enjoy a seamless workflow, from project initiation to completion. Our platform ensures smooth collaboration and successful outcomes."
 
-# new feature section with buttons
-features_and_benefits:
-  title: "Features & Benefits"
-  buttons:
-    - name: "Lower Fees"
-      content: "We charge only 2.5% after successful project completion."
-      image: "https://assets.softr-files.com/applications/eece772f-05ec-419e-86ca-19b703a800f8/assets/guy-multitasking-F0F0F4.svg"
-    - name: "Quality Assurance"
-      content: "Skill verification and client reviews ensure high-quality freelancers."
-      image: "https://assets.softr-files.com/applications/eece772f-05ec-419e-86ca-19b703a800f8/assets/quality-assurance-F0F0F4.svg"
-    - name: "Secure Payments"
-      content: "Escrow system holds payments until both parties are satisfied."
-      image: "https://assets.softr-files.com/applications/eece772f-05ec-419e-86ca-19b703a800f8/assets/secure-payments-F0F0F4.svg"
-    - name: "User-Friendly Dashboard"
-      content: "Easy project and communication management with our intuitive dashboard."
-      image: "https://assets.softr-files.com/applications/eece772f-05ec-419e-86ca-19b703a800f8/assets/user-friendly-dashboard-F0F0F4.svg"
+
 
 # call_to_action
 call_to_action:
